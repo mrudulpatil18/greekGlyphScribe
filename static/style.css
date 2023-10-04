@@ -1,0 +1,88 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+
+html {
+	height: 100%;
+	background: #EEE;
+}
+
+*{
+    margin: 0;
+}
+
+h1 {
+    margin-top: 50px;
+	position: absolute;
+	text-align: center;
+	left:0;
+	right:0;
+	font-family: 'Open Sans', Helvetica;
+	color: #807F7D;
+	font-size: 30px;
+	font-weight: 300;
+	z-index: -1;
+}
+
+#canvas {
+	position: relative;
+	border: 8px solid #84807F;
+	margin: auto;
+	margin-top: 160px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+h2{
+    position: absolute;
+	text-align: center;
+	left:0;
+	right:0;
+	font-family: 'Open Sans', Helvetica;
+	color: #807F7D;
+	font-size: 25px;
+	font-weight: 500;
+	z-index: -1;
+}
+
+.centered {
+	position: relative;
+	text-align: center;
+}
+
+footer{
+    position: absolute;
+    bottom:50px;
+    text-align: center;
+	left:0;
+	right:0;
+	font-family: 'Open Sans', Helvetica;
+	color: #807F7D;
+	font-size: 15px;
+}
+
+.footer{
+    position: absolute;
+    bottom:0px;
+    border-top: solid #c59c5fef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width:100%;
+    margin:0;
+    background-color: #0b0706e9;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: lightgray;
+    font-size: 18px;
+    font-weight: lighter;
+    text-decoration: none;
+
+}
