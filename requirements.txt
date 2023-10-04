@@ -4,3 +4,4 @@ Keras
 numpy
 opencv-python
 matplotlib
+tensorflow
