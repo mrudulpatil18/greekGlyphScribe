@@ -74,26 +74,33 @@ document.querySelector(".myButton").addEventListener("click", async function() {
             const data = await response.text()
             document.querySelector('.result').innerHTML = 
             `
+            <a href="https://en.wikipedia.org/wiki/${JSON.parse(data)[0].Name}" target="_blank">
             <div class="card hover">
                 <div class="heading"> 	\\(${ JSON.parse(data)[0].LaTeX }\\)
                     <div class="author"> Confidence <span class="name"> \\(${JSON.parse(data)[0].Confidence.toFixed(1)}\\) %</span></div>
                 </div>
                 <div class="category"> \\(${JSON.parse(data)[0].Name}\\) </div>
             </div>
+            </a>
 
+            <a href="https://en.wikipedia.org/wiki/${JSON.parse(data)[1].Name}" target="_blank">
             <div class="card hover">
                 <div class="heading"> 	\\(${ JSON.parse(data)[1].LaTeX }\\)
                     <div class="author"> Confidence <span class="name"> \\(${JSON.parse(data)[1].Confidence.toFixed(1)}\\) %</span></div>
                 </div>
                 <div class="category"> \\(${JSON.parse(data)[1].Name}\\) </div>
             </div>
+            </a>
 
+
+            <a href="https://en.wikipedia.org/wiki/${JSON.parse(data)[2].Name}" target="_blank">
             <div class="card hover">
                 <div class="heading"> 	\\(${ JSON.parse(data)[2].LaTeX }\\)
                     <div class="author"> Confidence <span class="name"> \\(${JSON.parse(data)[2].Confidence.toFixed(1)}\\) %</span></div>
                 </div>
                 <div class="category"> \\(${JSON.parse(data)[2].Name}\\) </div>
             </div>
+            </a>
             `;
             // document.querySelector('#result').innerHTML = '\\(' + JSON.parse(data)[1].LaTeX + '\\)';
             // document.querySelector('#result').innerHTML = '\\(' + JSON.parse(data)[2].LaTeX + '\\)';

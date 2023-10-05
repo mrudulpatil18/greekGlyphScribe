@@ -52,7 +52,6 @@ def get_df():
 
     for latex, index in greek_symbols.items():
         name = latex[1:]  # Remove the backslash to get the name
-        link = f"https://en.wikipedia.org/wiki/{name}"  # Generate Wikipedia link
-        data.append([latex, name, link, index])
-        df = pd.DataFrame(data, columns=['LaTeX', 'Name', 'Link', 'Index'])
+        data.append([latex, name, index])
+        df = pd.DataFrame(data, columns=['LaTeX', 'Name', 'Index'])
     return df
