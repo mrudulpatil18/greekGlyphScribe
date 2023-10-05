@@ -49,3 +49,8 @@ to discuss what you would like to change.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Authors
+
+- [@mrudulpatil18](https://www.github.com/mrudulpatil18)
+
