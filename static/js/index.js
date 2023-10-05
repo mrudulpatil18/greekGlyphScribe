@@ -49,7 +49,9 @@ const Canvas = () => {
             context.clearRect(0, 0, 280, 280);
             context.fillStyle = "white";
             context.fillRect(0, 0, canvas.width, canvas.height);
+            document.querySelector('.result').innerHTML = '<h4>Draw in Canvas</h4>';
         })
+
     }
 };
 
@@ -57,7 +59,7 @@ Canvas();
 
 
 document.querySelector(".myButton").addEventListener("click", async function() {
-    document.querySelector('.result').textContent = 'Predicting...';
+    document.querySelector('.result').innerHTML = '<h4>Predicting ... </h4>';
 
     const canvasObj = document.getElementById("canvas");
     const img = canvasObj.toDataURL('image/png');
