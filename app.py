@@ -10,48 +10,18 @@ import matplotlib.pyplot as plt
 app = Flask(__name__)
 model = init()
 
-greek_symbols = {
-    '\\pi': 0,
-    '\\Sigma': 1,
-    '\\lambda': 2,
-    '\\Xi': 3,
-    '\\Pi': 4,
-    '\\tau': 5,
-    '\\Phi': 6,
-    '\\chi': 7,
-    '\\Psi': 8,
-    '\\alpha': 9,
-    '\\beta': 10,
-    '\\sigma': 11,
-    '\\gamma': 12,
-    '\\delta': 13,
-    '\\Delta': 14,
-    '\\zeta': 15,
-    '\\eta': 16,
-    '\\theta': 17,
-    '\\Theta': 18,
-    '\\epsilon': 19,
-    '\\iota': 20,
-    '\\kappa': 21,
-    '\\Lambda': 22,
-    '\\mu': 23,
-    '\\nu': 24,
-    '\\xi': 25,
-    '\\rho': 26,
-    '\\phi': 27,
-    '\\varphi': 28,
-    '\\psi': 29,
-    '\\omega': 30,
-    '\\Omega': 31,
-    '\\varpi': 32}
+df = get_df()
 
-
-def return_key(val):
-    for key, value in greek_symbols.items():
-        if value == val:
-            return key
-    return 'Key Not Found'
-
+print(df)
+def return_json(out):
+    out = out.reshape(33)
+    out = out*100
+    idx = out.argsort()[-3:][::-1]
+    predictions = df[df['Index'].isin(idx)]
+    predictions["Confidence"] = out[predictions['Index']]
+    predictions = predictions.sort_values(by="Confidence", ascending=False)
+    print(predictions.to_json(orient = 'records'))
+    return predictions.to_json(orient = 'records')
 
 @app.route('/')
 def index():
@@ -71,11 +41,8 @@ def predict():
     plt.imsave('output_reduced.png', new_x, cmap='gray')
     x = x / 255
     out = model.predict(x)
-    out = out.reshape(33)
-    idx = out.argsort()[-5:][::-1]
-    str = ""
-    for i in idx:
-        str += return_key(i) + " "
+
+    str = return_json(out)
     return str
 
 

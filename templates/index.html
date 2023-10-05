@@ -4,48 +4,37 @@
 	<meta charset="UTF-8">
 	<title>Handwritten Digit Recognition using Convolutional Neural Networks</title>
 	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>	
 </head>
 
 <body>
-		<h1>Greek Characters used in Mathematics Recognition using Convolutional Neural Networks</h1>
+	<div class="content">
+		<h1 class="header">Greek Characters used in Mathematics Recognition using Convolutional Neural Networks</h1>
 
-
-		<div class="centered">
+		<div class="main">
+		<div class="input">
 			<canvas id="canvas" width="32" height="32"></canvas>
+			<div class="buttons">
+				<input type="button" class="myButton" value="Predict" style="">
+				<input type="button" id="clearButton" value="Clear" style="">
+			</div>
 		</div>
 
-		<div class="centered">
-			<input type="button" class="myButton" value="Predict" style="">
-			<input type="button" id="clearButton" value="Clear" style="">
+
+		<div class="result">
+			<h4>Draw in Canvas</h4>
+			
 		</div>
-
-		<div class="centered">
-			<h2 id="result"></h2>
 		</div>
-
-		<footer>This website elements of Frontend from <a href="https://github.com/llSourcell/how_to_deploy_a_keras_model_to_production">GitHub Repository</a></footer>
-
+		
 		<div class="footer">
        		<a href="https://github.com/mrudulpatil18" target="_blank"><img src="../static/icons8-github.svg" alt="github logo" height="30px"> <h8>mrudulpatil18</h8></a>
     	</div>
-
-  		<script src="{{url_for('static',filename='jquery-3.2.0.min.js')}}"></script>
-	    <script src="{{url_for('static',filename='index.js')}}"></script>
-	    <script type="text/javascript">
-	   		$(".myButton").click(function(){
-	   			$('#result').text('  Predicting...');
-	   			var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
-	   			var canvasObj = document.getElementById("canvas");
-	   			var img = canvasObj.toDataURL('image/png');
-	   			$.ajax({
-	   				type: "POST",
-	   				url: $SCRIPT_ROOT + "/predict/",
-	   				data: img,
-	   				success: function(data){
-	   					$('#result').text('Predicted Output: ' + data);
-	   				}
-	   			});
-	   		});
-	   </script>
+	</div>
+	    <script src="{{url_for('static',filename= 'js/index.js')}}" type="module"></script>
+		
 </body>
 </html>
+
