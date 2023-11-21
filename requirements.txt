@@ -1,6 +1,9 @@
-Flask
+flask
 tensorflow-cpu
 numpy
 opencv-python
 matplotlib
 pandas
+gunicorn
+
+
