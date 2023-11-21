@@ -4,6 +4,6 @@ numpy
 opencv-python
 matplotlib
 pandas
-
+gunicorn
 
 
