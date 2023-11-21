@@ -1,5 +1,5 @@
 Flask
-Keras
+tensorflow-cpu
 numpy
 opencv-python
 matplotlib
